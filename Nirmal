@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Will you be my Valentine?</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="card">
+    <h2>Nirali, will you be my Valentine? ❤️</h2>
+    <div class="buttons">
+      <button onclick="yesClick()">Yes</button>
+      <button id="noBtn" onmouseover="moveNo()">No</button>
+    </div>
+    <p class="hint">"No" seems a bit shy 😈</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+body {
+  background: #ffd6e8;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  background: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+button {
+  padding: 10px 25px;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+button:first-child {
+  background: #ff4d88;
+  color: white;
+}
+
+#noBtn {
+  background: #eee;
+  position: absolute;
+}
+function moveNo() {
+  const btn = document.getElementById("noBtn");
+  btn.style.top = Math.random() * 300 + "px";
+  btn.style.left = Math.random() * 300 + "px";
+}
+
+function yesClick() {
+  document.body.innerHTML = "<h1>Yay! 💖🥰</h1>";
+}
